@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PicklePals - Join Your Local Pickleball Community</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#4CAF50", secondary: "#FF9800" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+      font-family: 'Inter', sans-serif;
+      }
+      .hero-section {
+      background-image: url('https://static.readdy.ai/image/4b4e1968528fbee9910210d857eb996d/712dcea162579448d491e166025db616.png');
+      background-size: cover;
+      background-position: center;
+      }
+      .hero-overlay {
+      background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.2) 100%);
+      }
+      .testimonial-card {
+      scroll-snap-align: start;
+      }
+      .testimonials-container {
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      }
+      .testimonials-container::-webkit-scrollbar {
+      display: none;
+      }
+      .stats-section {
+      background-image: url('https://readdy.ai/api/search-image?query=Abstract%20background%20with%20subtle%20pickleball%20pattern%2C%20light%20colored%20background%20with%20faint%20outlines%20of%20pickleball%20courts%20and%20equipment%2C%20modern%20minimalist%20design%2C%20very%20light%20and%20airy%2C%20perfect%20for%20displaying%20text%20and%20statistics%2C%20professional%20clean%20design&width=1920&height=600&seq=stats1&orientation=landscape');
+      background-size: cover;
+      background-position: center;
+      }
+      .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .store-button {
+      transition: all 0.3s ease;
+      }
+      .store-button:hover {
+      transform: scale(1.05);
+      }
+      input:focus {
+      outline: none;
+      }
+      .app-screen {
+      transition: transform 0.3s ease;
+      }
+      .app-screen.active {
+      transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex items-center">
+            <div class="text-primary font-['Pacifico'] text-2xl">
+              InstaSportsInfo
+            </div>
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#features"
+              class="text-gray-700 hover:text-primary font-medium"
+              >Features</a
+            >
+            <a
+              href="#how-it-works"
+              class="text-gray-700 hover:text-primary font-medium"
+              >How It Works</a
+            >
+            <a
+              href="#community"
+              class="text-gray-700 hover:text-primary font-medium"
+              >Community</a
+            >
+            <a
+              href="#testimonials"
+              class="text-gray-700 hover:text-primary font-medium"
+              >Testimonials</a
+            >
+            <a
+              href="#download"
+              class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-opacity-90 transition-all"
+              >Download Now</a
+            >
+          </div>
+          <div class="md:hidden flex items-center">
+            <button
+              class="text-gray-700 w-10 h-10 flex items-center justify-center"
+            >
+              <i class="ri-menu-line ri-lg"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="hero-section relative pt-16">
+      <div class="hero-overlay absolute inset-0"></div>
+      <div
+        class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 flex flex-col md:flex-row items-center"
+      >
+        <div class="w-full md:w-1/2 text-white z-10 mb-12 md:mb-0">
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4"
+          >
+            Next Generation of Pickleball Sports Tools (Coming Soon! Stay Tuned)
+          </h1>
+          <p class="text-xl md:text-2xl mb-8 text-gray-100">
+            Connect, Play, Grow - All in One App
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-8">
+            <a
+              href="#"
+              class="store-button bg-black text-white px-6 py-3 !rounded-button whitespace-nowrap flex items-center justify-center gap-2"
+            >
+              <div class="w-6 h-6 flex items-center justify-center">
+                <i class="ri-apple-fill ri-lg"></i>
+              </div>
+              <div>
+                <div class="text-xs">Download on the</div>
+                <div class="text-sm font-semibold">App Store</div>
+              </div>
+            </a>
+            <a
+              href="#"
+              class="store-button bg-black text-white px-6 py-3 !rounded-button whitespace-nowrap flex items-center justify-center gap-2"
+            >
+              <div class="w-6 h-6 flex items-center justify-center">
+                <i class="ri-google-play-fill ri-lg"></i>
+              </div>
+              <div>
+                <div class="text-xs">Get it on</div>
+                <div class="text-sm font-semibold">Google Play</div>
+              </div>
+            </a>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="flex -space-x-2">
+              <img
+                class="w-10 h-10 rounded-full border-2 border-white object-cover"
+                src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20smiling%20middle-aged%20man%20with%20short%20brown%20hair%20wearing%20athletic%20clothes%2C%20natural%20lighting%2C%20neutral%20background%2C%20friendly%20expression&width=100&height=100&seq=user1&orientation=squarish"
+                alt="User"
+              />
+              <img
+                class="w-10 h-10 rounded-full border-2 border-white object-cover"
+                src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20young%20woman%20with%20blonde%20hair%20in%20a%20ponytail%20wearing%20athletic%20clothes%2C%20natural%20lighting%2C%20neutral%20background%2C%20friendly%20expression&width=100&height=100&seq=user2&orientation=squarish"
+                alt="User"
+              />
+              <img
+                class="w-10 h-10 rounded-full border-2 border-white object-cover"
+                src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20senior%20man%20with%20gray%20hair%20wearing%20athletic%20clothes%2C%20natural%20lighting%2C%20neutral%20background%2C%20friendly%20expression&width=100&height=100&seq=user3&orientation=squarish"
+                alt="User"
+              />
+            </div>
+            <p class="text-sm text-gray-200">
+              Join 10,000+ players already on PicklePals
+            </p>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 flex justify-center md:justify-end z-10">
+          <img
+            src="https://static.readdy.ai/image/4b4e1968528fbee9910210d857eb996d/bf9e17396ea4b29872d5d563d21f4f94.png"
+            alt="App Interface"
+            class="w-64 md:w-80 h-auto drop-shadow-2xl"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Why Players Love Our App
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Discover how PicklePals makes finding games, improving skills, and
+            connecting with other players easier than ever.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="feature-card bg-white p-8 rounded-lg shadow-md transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6 mx-auto"
+            >
+              <i class="ri-user-star-line ri-xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">
+              Courts Finding
+            </h3>
+            <p class="text-gray-600 text-center">Find best courts to play.</p>
+          </div>
+          <div
+            class="feature-card bg-white p-8 rounded-lg shadow-md transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6 mx-auto"
+            >
+              <i class="ri-calendar-event-line ri-xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">
+              Local Events & Tournaments
+            </h3>
+            <p class="text-gray-600 text-center">
+              Stay updated on nearby tournaments, clinics, and social events
+              happening in your area.
+            </p>
+          </div>
+          <div
+            class="feature-card bg-white p-8 rounded-lg shadow-md transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6 mx-auto"
+            >
+              <i class="ri-team-line ri-xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">
+              Community Connection
+            </h3>
+            <p class="text-gray-600 text-center">
+              Build your pickleball network, make new friends.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            How It Works
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Getting started with PicklePals is easy. Follow these simple steps
+            to join your local pickleball community.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+          <div
+            class="hidden md:block absolute top-1/2 left-1/4 right-1/4 h-0.5 bg-gray-200 -z-10"
+          ></div>
+          <div class="text-center">
+            <div
+              class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mb-6 mx-auto text-white text-2xl font-bold"
+            >
+              1
+            </div>
+            <div class="mb-6">
+              <img
+                src="https://readdy.ai/api/search-image?query=Simple%20illustration%20of%20a%20smartphone%20with%20download%20arrow%2C%20minimalist%20design%2C%20green%20color%20scheme%2C%20clean%20lines%2C%20digital%20art%20style%20on%20white%20background&width=200&height=200&seq=step1&orientation=squarish"
+                alt="Download App"
+                class="w-40 h-40 object-contain mx-auto"
+              />
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Download App
+            </h3>
+            <p class="text-gray-600">
+              Get PicklePals from the App Store or Google Play Store.
+            </p>
+          </div>
+          <div class="text-center">
+            <div
+              class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mb-6 mx-auto text-white text-2xl font-bold"
+            >
+              2
+            </div>
+            <div class="mb-6">
+              <img
+                src="https://readdy.ai/api/search-image?query=Simple%20illustration%20of%20a%20profile%20settings%20screen%20with%20skill%20level%20selector%2C%20minimalist%20design%2C%20green%20color%20scheme%2C%20clean%20lines%2C%20digital%20art%20style%20on%20white%20background&width=200&height=200&seq=step2&orientation=squarish"
+                alt="Set Skill Level"
+                class="w-40 h-40 object-contain mx-auto"
+              />
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Set Your Location
+            </h3>
+            <p class="text-gray-600">
+              Create your profile and indicate your playing experience.
+            </p>
+          </div>
+          <div class="text-center">
+            <div
+              class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mb-6 mx-auto text-white text-2xl font-bold"
+            >
+              3
+            </div>
+            <div class="mb-6">
+              <img
+                src="https://readdy.ai/api/search-image?query=Simple%20illustration%20of%20a%20map%20with%20player%20location%20pins%2C%20minimalist%20design%2C%20green%20color%20scheme%2C%20clean%20lines%2C%20digital%20art%20style%20on%20white%20background&width=200&height=200&seq=step3&orientation=squarish"
+                alt="Find Players"
+                class="w-40 h-40 object-contain mx-auto"
+              />
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Find Local Players
+            </h3>
+            <p class="text-gray-600">
+              Discover games, events, and players in your area.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Stats Section -->
+    <section id="community" class="stats-section py-20 bg-cover bg-center">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Our Growing Community
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Join thousands of pickleball enthusiasts already connecting through
+            our platform.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="bg-white bg-opacity-90 p-8 rounded-lg shadow-md text-center"
+          >
+            <div
+              class="text-4xl md:text-5xl font-bold text-primary mb-2 counter"
+            >
+              1000
+            </div>
+            <p class="text-gray-600 text-lg">Active Players</p>
+          </div>
+          <div
+            class="bg-white bg-opacity-90 p-8 rounded-lg shadow-md text-center"
+          >
+            <div
+              class="text-4xl md:text-5xl font-bold text-primary mb-2 counter"
+            >
+              350+
+            </div>
+            <p class="text-gray-600 text-lg">Cities Covered</p>
+          </div>
+          <div
+            class="bg-white bg-opacity-90 p-8 rounded-lg shadow-md text-center"
+          >
+            <div
+              class="text-4xl md:text-5xl font-bold text-primary mb-2 counter"
+            >
+              2000+
+            </div>
+            <p class="text-gray-600 text-lg">Monthly Matches</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            What Players Are Saying
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Hear from our community members about how PicklePals has transformed
+            their pickleball experience.
+          </p>
+        </div>
+        <div class="relative">
+          <div class="testimonials-container flex overflow-x-auto pb-8 gap-6">
+            <div
+              class="testimonial-card flex-shrink-0 w-full md:w-96 bg-white rounded-lg shadow-md p-6 border border-gray-100"
+            >
+              <div class="flex items-center mb-4">
+                <img
+                  src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20smiling%20middle-aged%20woman%20with%20brown%20hair%20wearing%20athletic%20clothes%2C%20natural%20lighting%2C%20neutral%20background%2C%20friendly%20expression&width=100&height=100&seq=test1&orientation=squarish"
+                  alt="Sarah Johnson"
+                  class="w-14 h-14 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 class="text-lg font-semibold text-gray-900">
+                    Sarah Johnson
+                  </h4>
+                  <div class="flex text-yellow-400">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-600">
+                "I moved to a new city and didn't know anyone who played
+                pickleball. PicklePals helped me find local courts, connect with
+                players , and now I play 3 times a week with an amazing group!"
+              </p>
+            </div>
+            <div
+              class="testimonial-card flex-shrink-0 w-full md:w-96 bg-white rounded-lg shadow-md p-6 border border-gray-100"
+            >
+              <div class="flex items-center mb-4">
+                <img
+                  src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20smiling%20older%20man%20with%20gray%20hair%20wearing%20athletic%20clothes%2C%20natural%20lighting%2C%20neutral%20background%2C%20friendly%20expression&width=100&height=100&seq=test2&orientation=squarish"
+                  alt="Robert Chen"
+                  class="w-14 h-14 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 class="text-lg font-semibold text-gray-900">
+                    Robert Chen
+                  </h4>
+                  <div class="flex text-yellow-400">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-600">
+                "As a 65-year-old beginner, I was intimidated to join games.
+                This App helped me find other seniors just starting out. Now I'm
+                improving and having a blast with my new pickleball friends!"
+              </p>
+            </div>
+            <div
+              class="testimonial-card flex-shrink-0 w-full md:w-96 bg-white rounded-lg shadow-md p-6 border border-gray-100"
+            >
+              <div class="flex items-center mb-4">
+                <img
+                  src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20smiling%20young%20man%20with%20dark%20hair%20wearing%20athletic%20clothes%2C%20natural%20lighting%2C%20neutral%20background%2C%20friendly%20expression&width=100&height=100&seq=test3&orientation=squarish"
+                  alt="Michael Torres"
+                  class="w-14 h-14 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 class="text-lg font-semibold text-gray-900">
+                    Michael Torres
+                  </h4>
+                  <div class="flex text-yellow-400">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-600">
+                "The tournament notifications are game-changing! I've
+                participated in 5 local competitions I would have missed
+                otherwise. The app has seriously elevated my competitive play."
+              </p>
+            </div>
+            <div
+              class="testimonial-card flex-shrink-0 w-full md:w-96 bg-white rounded-lg shadow-md p-6 border border-gray-100"
+            >
+              <div class="flex items-center mb-4">
+                <img
+                  src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20smiling%20young%20woman%20with%20curly%20hair%20wearing%20athletic%20clothes%2C%20natural%20lighting%2C%20neutral%20background%2C%20friendly%20expression&width=100&height=100&seq=test4&orientation=squarish"
+                  alt="Alicia Washington"
+                  class="w-14 h-14 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 class="text-lg font-semibold text-gray-900">
+                    Alicia Washington
+                  </h4>
+                  <div class="flex text-yellow-400">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-line"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-600">
+                "I love how easy it is to schedule games! No more endless text
+                chains trying to coordinate times. The court reservation feature
+                saved me so much hassle, and I've met some amazing people
+                through the community events."
+              </p>
+            </div>
+          </div>
+          <div class="absolute left-0 top-1/2 -translate-y-1/2 hidden md:block">
+            <button
+              id="prev-testimonial"
+              class="w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center text-gray-600 hover:text-primary"
+            >
+              <i class="ri-arrow-left-s-line ri-lg"></i>
+            </button>
+          </div>
+          <div
+            class="absolute right-0 top-1/2 -translate-y-1/2 hidden md:block"
+          >
+            <button
+              id="next-testimonial"
+              class="w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center text-gray-600 hover:text-primary"
+            >
+              <i class="ri-arrow-right-s-line ri-lg"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- App Preview Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            App Preview
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Take a look at what makes PicklePals the ultimate pickleball
+            community app.
+          </p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-8">
+          <div class="app-screen active">
+            <img
+              src="https://static.readdy.ai/image/4b4e1968528fbee9910210d857eb996d/bf9e17396ea4b29872d5d563d21f4f94.png"
+              alt="App Screen"
+              class="w-56 h-auto rounded-xl shadow-xl"
+            />
+            <p class="text-center mt-4 text-gray-700 font-medium">
+              Secret Features Coming Soon
+            </p>
+          </div>
+          <div class="app-screen">
+            <img
+              src="https://static.readdy.ai/image/4b4e1968528fbee9910210d857eb996d/bf9e17396ea4b29872d5d563d21f4f94.png"
+              alt="App Screen"
+              class="w-56 h-auto rounded-xl shadow-xl"
+            />
+            <p class="text-center mt-4 text-gray-700 font-medium">
+              Event Calendar
+            </p>
+          </div>
+          <div class="app-screen">
+            <img
+              src="https://readdy.ai/api/search-image?query=Smartphone%20displaying%20a%20pickleball%20app%20messaging%20screen%20between%20players%20arranging%20a%20match%2C%20clean%20modern%20UI%20design%20with%20green%20color%20scheme%2C%20high-quality%20digital%20mockup&width=300&height=600&seq=screen3&orientation=portrait"
+              alt="App Screen"
+              class="w-56 h-auto rounded-xl shadow-xl"
+            />
+            <p class="text-center mt-4 text-gray-700 font-medium">
+              Connect & Chat
+            </p>
+          </div>
+          <div class="app-screen">
+            <img
+              src="https://readdy.ai/api/search-image?query=Smartphone%20displaying%20a%20pickleball%20app%20court%20reservation%20screen%20with%20available%20time%20slots%2C%20clean%20modern%20UI%20design%20with%20green%20color%20scheme%2C%20high-quality%20digital%20mockup&width=300&height=600&seq=screen4&orientation=portrait"
+              alt="App Screen"
+              class="w-56 h-auto rounded-xl shadow-xl"
+            />
+            <p class="text-center mt-4 text-gray-700 font-medium">
+              Court Reservations
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Download Section -->
+    <section id="download" class="py-20 bg-primary bg-opacity-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Download PicklePals Today
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Join thousands of pickleball enthusiasts and take your game to the
+            next level.
+          </p>
+        </div>
+        <div
+          class="flex flex-col md:flex-row items-center justify-center gap-8"
+        >
+          <div class="flex flex-col items-center">
+            <a
+              href="#"
+              class="store-button bg-black text-white px-8 py-4 !rounded-button whitespace-nowrap flex items-center justify-center gap-3 mb-4"
+            >
+              <div class="w-8 h-8 flex items-center justify-center">
+                <i class="ri-apple-fill ri-xl"></i>
+              </div>
+              <div>
+                <div class="text-xs">Download on the</div>
+                <div class="text-base font-semibold">App Store</div>
+              </div>
+            </a>
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGQ9Ik0zIDNoMTh2MThoLTE4eiIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik0xMiAyYy01LjUyIDAtMTAgNC40OC0xMCAxMHM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTAtNC40OC0xMC0xMC0xMHptLTEgMTVsLTUtNSAxLjQxLTEuNDEgMy41OSAzLjU4IDcuNTktNy41OSAxLjQxIDEuNDItOSA5eiIgZmlsbD0iIzRjYWY1MCIvPjwvc3ZnPg=="
+              alt="QR Code"
+              class="w-24 h-24"
+            />
+          </div>
+          <div class="flex flex-col items-center">
+            <a
+              href="#"
+              class="store-button bg-black text-white px-8 py-4 !rounded-button whitespace-nowrap flex items-center justify-center gap-3 mb-4"
+            >
+              <div class="w-8 h-8 flex items-center justify-center">
+                <i class="ri-google-play-fill ri-xl"></i>
+              </div>
+              <div>
+                <div class="text-xs">Get it on</div>
+                <div class="text-base font-semibold">Google Play</div>
+              </div>
+            </a>
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGQ9Ik0zIDNoMTh2MThoLTE4eiIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik0xMiAyYy01LjUyIDAtMTAgNC40OC0xMCAxMHM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTAtNC40OC0xMC0xMC0xMHptLTEgMTVsLTUtNSAxLjQxLTEuNDEgMy41OSAzLjU4IDcuNTktNy41OSAxLjQxIDEuNDItOSA5eiIgZmlsbD0iIzRjYWY1MCIvPjwvc3ZnPg=="
+              alt="QR Code"
+              class="w-24 h-24"
+            />
+          </div>
+        </div>
+        <div class="text-center mt-8">
+          <p class="text-gray-600">Available for iOS and Android devices</p>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div class="text-primary font-['Pacifico'] text-2xl mb-4">
+              InstaSportsInfo
+            </div>
+            <p class="text-gray-400 mb-4">
+              Connect with your local pickleball community and take your game to
+              the next level.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white w-10 h-10 flex items-center justify-center rounded-full bg-gray-800"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white w-10 h-10 flex items-center justify-center rounded-full bg-gray-800"
+              >
+                <i class="ri-twitter-x-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white w-10 h-10 flex items-center justify-center rounded-full bg-gray-800"
+              >
+                <i class="ri-instagram-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white w-10 h-10 flex items-center justify-center rounded-full bg-gray-800"
+              >
+                <i class="ri-youtube-fill"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Company</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">About Us</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Careers</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Press</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Blog</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Support</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Help Center</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Community Guidelines</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">FAQs</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Legal</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Terms of Service</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Cookie Policy</a
+                >
+              </li>
+              <li>
+                <div class="relative">
+                  <select
+                    class="appearance-none bg-gray-800 text-gray-400 py-2 pl-3 pr-8 rounded w-full border-none"
+                  >
+                    <option>English</option>
+                    <option>Spanish</option>
+                    <option>French</option>
+                  </select>
+                  <div
+                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400"
+                  >
+                    <i class="ri-arrow-down-s-line"></i>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-400 text-sm">
+            © 2025 InstaSportsInfo, Inc. All rights reserved.
+          </p>
+          <div class="flex items-center space-x-4 mt-4 md:mt-0">
+            <i class="ri-visa-fill ri-lg text-gray-400"></i>
+            <i class="ri-mastercard-fill ri-lg text-gray-400"></i>
+            <i class="ri-paypal-fill ri-lg text-gray-400"></i>
+            <i class="ri-apple-fill ri-lg text-gray-400"></i>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script id="testimonial-carousel">
+      document.addEventListener("DOMContentLoaded", function () {
+        const container = document.querySelector(".testimonials-container");
+        const prevButton = document.getElementById("prev-testimonial");
+        const nextButton = document.getElementById("next-testimonial");
+        const cards = document.querySelectorAll(".testimonial-card");
+        if (!container || !prevButton || !nextButton || cards.length === 0) return;
+        const cardWidth = cards[0].offsetWidth + 24; // Width + gap
+        nextButton.addEventListener("click", function () {
+          container.scrollBy({ left: cardWidth, behavior: "smooth" });
+        });
+        prevButton.addEventListener("click", function () {
+          container.scrollBy({ left: -cardWidth, behavior: "smooth" });
+        });
+      });
+    </script>
+    <script id="app-screen-carousel">
+      document.addEventListener("DOMContentLoaded", function () {
+        const screens = document.querySelectorAll(".app-screen");
+        if (screens.length === 0) return;
+        let currentIndex = 0;
+        function rotateScreens() {
+          screens.forEach((screen) => screen.classList.remove("active"));
+          currentIndex = (currentIndex + 1) % screens.length;
+          screens[currentIndex].classList.add("active");
+        }
+        // Initial state
+        screens[0].classList.add("active");
+        // Rotate every 3 seconds
+        setInterval(rotateScreens, 3000);
+        // Make screens clickable
+        screens.forEach((screen, index) => {
+          screen.addEventListener("click", () => {
+            screens.forEach((s) => s.classList.remove("active"));
+            screen.classList.add("active");
+            currentIndex = index;
+          });
+        });
+      });
+    </script>
+    <script id="counter-animation">
+      document.addEventListener("DOMContentLoaded", function () {
+        const counters = document.querySelectorAll(".counter");
+        function isElementInViewport(el) {
+          const rect = el.getBoundingClientRect();
+          return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <=
+              (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+          );
+        }
+        function animateCounters() {
+          counters.forEach((counter) => {
+            if (
+              isElementInViewport(counter) &&
+              !counter.classList.contains("animated")
+            ) {
+              counter.classList.add("animated");
+              const target = counter.innerText;
+              counter.innerText = "0";
+              let count = 0;
+              const duration = 2000; // 2 seconds
+              const interval = 50; // Update every 50ms
+              const steps = duration / interval;
+              // Extract the number part
+              const matches = target.match(/(\d+)(\D*)/);
+              if (!matches) return;
+              const finalNumber = parseInt(matches[1]);
+              const suffix = matches[2] || "";
+              const increment = Math.ceil(finalNumber / steps);
+              const timer = setInterval(() => {
+                count += increment;
+                if (count >= finalNumber) {
+                  clearInterval(timer);
+                  counter.innerText = target;
+                } else {
+                  counter.innerText = count + suffix;
+                }
+              }, interval);
+            }
+          });
+        }
+        // Check on scroll
+        window.addEventListener("scroll", animateCounters);
+        // Check on initial load
+        animateCounters();
+      });
+    </script>
+    <script id="mobile-menu">
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuButton = document.querySelector(".md\\:hidden button");
+        if (!menuButton) return;
+        let mobileMenu = document.createElement("div");
+        mobileMenu.className = "fixed inset-0 bg-black bg-opacity-50 z-50 hidden";
+        mobileMenu.innerHTML = `
+      <div class="bg-white h-full w-64 p-6 transform transition-transform -translate-x-full">
+      <div class="flex justify-between items-center mb-8">
+      <div class="text-primary font-['Pacifico'] text-2xl">logo</div>
+      <button class="close-menu w-10 h-10 flex items-center justify-center">
+      <i class="ri-close-line ri-lg"></i>
+      </button>
+      </div>
+      <nav class="flex flex-col space-y-4">
+      <a href="#features" class="text-gray-700 hover:text-primary py-2">Features</a>
+      <a href="#how-it-works" class="text-gray-700 hover:text-primary py-2">How It Works</a>
+      <a href="#community" class="text-gray-700 hover:text-primary py-2">Community</a>
+      <a href="#testimonials" class="text-gray-700 hover:text-primary py-2">Testimonials</a>
+      <a href="#download" class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-opacity-90 transition-all text-center mt-4">Download Now</a>
+      </nav>
+      </div>
+      `;
+        document.body.appendChild(mobileMenu);
+        const menuContent = mobileMenu.querySelector("div");
+        const closeButton = mobileMenu.querySelector(".close-menu");
+        const menuLinks = mobileMenu.querySelectorAll("a");
+        menuButton.addEventListener("click", function () {
+          mobileMenu.classList.remove("hidden");
+          setTimeout(() => {
+            menuContent.classList.remove("-translate-x-full");
+          }, 10);
+        });
+        function closeMenu() {
+          menuContent.classList.add("-translate-x-full");
+          setTimeout(() => {
+            mobileMenu.classList.add("hidden");
+          }, 300);
+        }
+        closeButton.addEventListener("click", closeMenu);
+        menuLinks.forEach((link) => {
+          link.addEventListener("click", closeMenu);
+        });
+        mobileMenu.addEventListener("click", function (e) {
+          if (e.target === mobileMenu) {
+            closeMenu();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
