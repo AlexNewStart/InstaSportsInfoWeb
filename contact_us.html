@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - InstaSportsInfo</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#4CAF50", secondary: "#FF9800" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+          font-family: 'Inter', sans-serif;
+      }
+      .contact-hero {
+          background-image: url('https://readdy.ai/api/search-image?query=Modern%20customer%20support%20concept%20with%20soft%20gradient%20background%20in%20light%20green%20and%20blue%20tones%2C%20abstract%20geometric%20shapes%2C%20subtle%20patterns%20creating%20a%20professional%20and%20welcoming%20atmosphere%2C%20perfect%20for%20contact%20page%20hero%20section%2C%20clean%20design%20with%20ample%20space%20for%20text%20on%20left%20side&width=1920&height=500&seq=contact1&orientation=landscape');
+          background-size: cover;
+          background-position: center;
+      }
+      input:focus, textarea:focus, select:focus {
+          outline: none;
+      }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+      }
+      .faq-item.active .faq-answer {
+          max-height: 1000px;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+      }
+      .faq-item.active .faq-icon {
+          transform: rotate(180deg);
+      }
+      .faq-answer {
+          max-height: 0;
+          overflow: hidden;
+          transition: all 0.3s ease;
+          padding-top: 0;
+          padding-bottom: 0;
+      }
+      .faq-icon {
+          transition: transform 0.3s ease;
+      }
+      .custom-checkbox {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+      }
+      .custom-checkbox input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+      }
+      .checkmark {
+          height: 20px;
+          width: 20px;
+          background-color: #fff;
+          border: 2px solid #e5e7eb;
+          border-radius: 4px;
+          position: relative;
+      }
+      .custom-checkbox input:checked ~ .checkmark {
+          background-color: #4CAF50;
+          border-color: #4CAF50;
+      }
+      .checkmark:after {
+          content: "";
+          position: absolute;
+          display: none;
+          left: 6px;
+          top: 2px;
+          width: 5px;
+          height: 10px;
+          border: solid white;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+      }
+      .custom-checkbox input:checked ~ .checkmark:after {
+          display: block;
+      }
+      .custom-radio {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+      }
+      .custom-radio input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+      }
+      .radio-mark {
+          height: 20px;
+          width: 20px;
+          background-color: #fff;
+          border: 2px solid #e5e7eb;
+          border-radius: 50%;
+          position: relative;
+      }
+      .custom-radio input:checked ~ .radio-mark {
+          border-color: #4CAF50;
+      }
+      .radio-mark:after {
+          content: "";
+          position: absolute;
+          display: none;
+          top: 3px;
+          left: 3px;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: #4CAF50;
+      }
+      .custom-radio input:checked ~ .radio-mark:after {
+          display: block;
+      }
+      .custom-switch {
+          position: relative;
+          display: inline-block;
+          width: 48px;
+          height: 24px;
+      }
+      .custom-switch input {
+          opacity: 0;
+          width: 0;
+          height: 0;
+      }
+      .switch-slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #e5e7eb;
+          transition: .4s;
+          border-radius: 24px;
+      }
+      .switch-slider:before {
+          position: absolute;
+          content: "";
+          height: 18px;
+          width: 18px;
+          left: 3px;
+          bottom: 3px;
+          background-color: white;
+          transition: .4s;
+          border-radius: 50%;
+      }
+      input:checked + .switch-slider {
+          background-color: #4CAF50;
+      }
+      input:checked + .switch-slider:before {
+          transform: translateX(24px);
+      }
+      .map-container {
+          background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png');
+          background-size: cover;
+          background-position: center;
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex items-center">
+            <a
+              href="https://readdy.ai/home/bfd0bed7-a0c9-4b77-8527-a923a1fc171a/4e3c23f1-33b7-4058-bbbc-d68f7c3c56d2"
+              data-readdy="true"
+              class="text-primary font-['Pacifico'] text-2xl"
+              >InstaSportsInfo</a
+            >
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="https://readdy.ai/home/bfd0bed7-a0c9-4b77-8527-a923a1fc171a/4e3c23f1-33b7-4058-bbbc-d68f7c3c56d2"
+              data-readdy="true"
+              class="text-gray-700 hover:text-primary font-medium"
+              >Home</a
+            >
+            <a href="#" class="text-gray-700 hover:text-primary font-medium"
+              >Features</a
+            >
+            <a href="#" class="text-gray-700 hover:text-primary font-medium"
+              >Community</a
+            >
+            <a href="#" class="text-gray-700 hover:text-primary font-medium"
+              >About Us</a
+            >
+            <a href="#" class="text-primary font-medium">Contact Us</a>
+          </div>
+          <div class="md:hidden flex items-center">
+            <button
+              class="text-gray-700 w-10 h-10 flex items-center justify-center"
+            >
+              <i class="ri-menu-line ri-lg"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="contact-hero pt-24 pb-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Get in Touch
+          </h1>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            We're here to help! Reach out to our team with any questions,
+            feedback, or support needs.
+          </p>
+        </div>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <div
+            class="flex items-center bg-white px-6 py-3 rounded-full shadow-md"
+          >
+            <div class="w-8 h-8 flex items-center justify-center text-primary">
+              <i class="ri-time-line ri-lg"></i>
+            </div>
+            <span class="ml-2 text-gray-700">Response within 24 hours</span>
+          </div>
+          <div
+            class="flex items-center bg-white px-6 py-3 rounded-full shadow-md"
+          >
+            <div class="w-8 h-8 flex items-center justify-center text-primary">
+              <i class="ri-customer-service-2-line ri-lg"></i>
+            </div>
+            <span class="ml-2 text-gray-700"
+              >Support available 7 days a week</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Contact Form -->
+          <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">
+              Send Us a Message
+            </h2>
+            <form id="contact-form">
+              <div class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label
+                      for="name"
+                      class="block text-sm font-medium text-gray-700 mb-1"
+                      >Full Name *</label
+                    >
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      class="w-full px-4 py-3 bg-white border border-gray-300 rounded text-gray-700 text-sm"
+                      placeholder="Your name"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="email"
+                      class="block text-sm font-medium text-gray-700 mb-1"
+                      >Email Address *</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      class="w-full px-4 py-3 bg-white border border-gray-300 rounded text-gray-700 text-sm"
+                      placeholder="your.email@example.com"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label
+                    for="subject"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Subject *</label
+                  >
+                  <div class="relative">
+                    <select
+                      id="subject"
+                      name="subject"
+                      required
+                      class="appearance-none w-full px-4 py-3 bg-white border border-gray-300 rounded text-gray-700 text-sm pr-8"
+                    >
+                      <option value="" disabled selected>
+                        Select a subject
+                      </option>
+                      <option value="general">General Inquiry</option>
+                      <option value="support">Technical Support</option>
+                      <option value="billing">Billing Question</option>
+                      <option value="partnership">
+                        Partnership Opportunity
+                      </option>
+                      <option value="feedback">Feedback</option>
+                    </select>
+                    <div
+                      class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+                    >
+                      <i class="ri-arrow-down-s-line"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <label
+                    for="message"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Message *</label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                    class="w-full px-4 py-3 bg-white border border-gray-300 rounded text-gray-700 text-sm resize-none"
+                    placeholder="How can we help you?"
+                  ></textarea>
+                </div>
+
+                <div>
+                  <label class="custom-checkbox flex items-start gap-2">
+                    <input type="checkbox" name="newsletter" id="newsletter" />
+                    <span class="checkmark mt-0.5"></span>
+                    <span class="text-sm text-gray-600"
+                      >Subscribe to our newsletter to receive updates and
+                      news</span
+                    >
+                  </label>
+                </div>
+
+                <div>
+                  <button
+                    type="submit"
+                    class="w-full bg-primary hover:bg-opacity-90 text-white font-medium py-3 px-6 !rounded-button whitespace-nowrap transition-all flex items-center justify-center"
+                  >
+                    <span>Send Message</span>
+                    <i class="ri-send-plane-line ml-2"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Contact Information -->
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">
+              Contact Information
+            </h2>
+
+            <div class="space-y-8">
+              <div class="flex">
+                <div
+                  class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center text-primary mr-4"
+                >
+                  <i class="ri-mail-line ri-lg"></i>
+                </div>
+                <div>
+                  <h3 class="text-lg font-medium text-gray-900">
+                    Email Support
+                  </h3>
+                  <p class="text-gray-600 mb-1">
+                    For general inquiries and support
+                  </p>
+                  <a
+                    href="mailto:cs@instasports.info"
+                    class="text-primary hover:underline"
+                    >cs@instasports.info</a
+                  >
+                </div>
+              </div>
+
+              <div class="flex">
+                <div
+                  class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center text-primary mr-4"
+                >
+                  <i class="ri-phone-line ri-lg"></i>
+                </div>
+                <div>
+                  <h3 class="text-lg font-medium text-gray-900">
+                    Phone Support
+                  </h3>
+                  <p class="text-gray-600 mb-1">
+                    Monday to Friday, 9AM-6PM EST
+                  </p>
+                  <a
+                    href="tel:+18888635678"
+                    class="text-primary hover:underline"
+                    >+1 (888) 863-5678</a
+                  >
+                </div>
+              </div>
+
+              <div class="flex">
+                <div
+                  class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center text-primary mr-4"
+                >
+                  <i class="ri-map-pin-line ri-lg"></i>
+                </div>
+                <div>
+                  <h3 class="text-lg font-medium text-gray-900">
+                    Office Location
+                  </h3>
+                  <p class="text-gray-600 mb-1">123 Pickleball Avenue</p>
+                  <p class="text-gray-600">San Francisco, CA 94107</p>
+                </div>
+              </div>
+
+              <div class="flex">
+                <div
+                  class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center text-primary mr-4"
+                >
+                  <i class="ri-global-line ri-lg"></i>
+                </div>
+                <div>
+                  <h3 class="text-lg font-medium text-gray-900">
+                    Social Media
+                  </h3>
+                  <p class="text-gray-600 mb-3">
+                    Connect with us on social platforms
+                  </p>
+                  <div class="flex space-x-4">
+                    <a
+                      href="#"
+                      class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all"
+                    >
+                      <i class="ri-facebook-fill"></i>
+                    </a>
+                    <a
+                      href="#"
+                      class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all"
+                    >
+                      <i class="ri-twitter-x-fill"></i>
+                    </a>
+                    <a
+                      href="#"
+                      class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all"
+                    >
+                      <i class="ri-instagram-fill"></i>
+                    </a>
+                    <a
+                      href="#"
+                      class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all"
+                    >
+                      <i class="ri-linkedin-fill"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-10">
+              <h3 class="text-lg font-medium text-gray-900 mb-4">
+                Our Location
+              </h3>
+              <div class="map-container h-64 rounded-lg overflow-hidden"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Response Times Section -->
+    <section class="py-12 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <h2 class="text-2xl font-bold text-gray-900 mb-6">Response Times</h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="border border-gray-200 rounded-lg p-6">
+              <div
+                class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-primary mb-4"
+              >
+                <i class="ri-mail-line ri-lg"></i>
+              </div>
+              <h3 class="text-lg font-medium text-gray-900 mb-2">
+                Email Support
+              </h3>
+              <p class="text-gray-600">
+                We aim to respond to all email inquiries within 24 hours during
+                business days.
+              </p>
+            </div>
+
+            <div class="border border-gray-200 rounded-lg p-6">
+              <div
+                class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-4"
+              >
+                <i class="ri-chat-1-line ri-lg"></i>
+              </div>
+              <h3 class="text-lg font-medium text-gray-900 mb-2">Live Chat</h3>
+              <p class="text-gray-600">
+                Our live chat support is available Monday to Friday, 9AM-6PM EST
+                with immediate responses.
+              </p>
+            </div>
+
+            <div class="border border-gray-200 rounded-lg p-6">
+              <div
+                class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 mb-4"
+              >
+                <i class="ri-phone-line ri-lg"></i>
+              </div>
+              <h3 class="text-lg font-medium text-gray-900 mb-2">
+                Phone Support
+              </h3>
+              <p class="text-gray-600">
+                Our phone support team is available during business hours with
+                minimal wait times.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="mt-8 p-4 bg-yellow-50 border border-yellow-200 rounded-lg"
+          >
+            <div class="flex items-start">
+              <div
+                class="w-10 h-10 flex items-center justify-center text-yellow-500 mr-3 mt-0.5"
+              >
+                <i class="ri-information-line ri-lg"></i>
+              </div>
+              <div>
+                <h4 class="text-base font-medium text-gray-900 mb-1">
+                  Emergency Support
+                </h4>
+                <p class="text-gray-600">
+                  For urgent matters outside of business hours, please email
+                  <a
+                    href="mailto:urgent@instasportsinfo.com"
+                    class="text-primary hover:underline"
+                    >urgent@instasportsinfo.com</a
+                  >
+                  with "URGENT" in the subject line, and we'll do our best to
+                  assist you as soon as possible.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Find quick answers to common questions about our app and services.
+          </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto">
+          <div class="mb-6">
+            <div class="relative">
+              <input
+                type="text"
+                id="faq-search"
+                class="w-full px-4 py-3 pl-12 bg-white border border-gray-300 rounded-lg text-gray-700 text-sm"
+                placeholder="Search for questions..."
+              />
+              <div
+                class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"
+              >
+                <i class="ri-search-line"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-4 mt-8">
+            <div
+              class="faq-item border border-gray-200 rounded-lg overflow-hidden"
+            >
+              <button
+                class="faq-toggle w-full flex justify-between items-center p-4 bg-white hover:bg-gray-50 text-left"
+              >
+                <span class="text-lg font-medium text-gray-900"
+                  >How do I reset my password?</span
+                >
+                <i class="ri-arrow-down-s-line faq-icon text-gray-500"></i>
+              </button>
+              <div class="faq-answer px-4 bg-gray-50 text-gray-600">
+                <p>
+                  To reset your password, go to the login screen and click on
+                  "Forgot Password". Enter your email address, and we'll send
+                  you a link to create a new password. The link is valid for 24
+                  hours.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="faq-item border border-gray-200 rounded-lg overflow-hidden"
+            >
+              <button
+                class="faq-toggle w-full flex justify-between items-center p-4 bg-white hover:bg-gray-50 text-left"
+              >
+                <span class="text-lg font-medium text-gray-900"
+                  >How do I update my skill level?</span
+                >
+                <i class="ri-arrow-down-s-line faq-icon text-gray-500"></i>
+              </button>
+              <div class="faq-answer px-4 bg-gray-50 text-gray-600">
+                <p>
+                  You can update your skill level by going to your profile
+                  settings. Tap on "Edit Profile", scroll down to the "Skill
+                  Level" section, and select your current level. Don't forget to
+                  save your changes.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="faq-item border border-gray-200 rounded-lg overflow-hidden"
+            >
+              <button
+                class="faq-toggle w-full flex justify-between items-center p-4 bg-white hover:bg-gray-50 text-left"
+              >
+                <span class="text-lg font-medium text-gray-900"
+                  >Can I cancel or reschedule a game?</span
+                >
+                <i class="ri-arrow-down-s-line faq-icon text-gray-500"></i>
+              </button>
+              <div class="faq-answer px-4 bg-gray-50 text-gray-600">
+                <p>
+                  Yes, you can cancel or reschedule a game by going to "My
+                  Games" in the app. Find the game you want to modify, tap on
+                  it, and select "Cancel" or "Reschedule". Please note that some
+                  venues have specific cancellation policies that may apply.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="faq-item border border-gray-200 rounded-lg overflow-hidden"
+            >
+              <button
+                class="faq-toggle w-full flex justify-between items-center p-4 bg-white hover:bg-gray-50 text-left"
+              >
+                <span class="text-lg font-medium text-gray-900"
+                  >How do I find tournaments in my area?</span
+                >
+                <i class="ri-arrow-down-s-line faq-icon text-gray-500"></i>
+              </button>
+              <div class="faq-answer px-4 bg-gray-50 text-gray-600">
+                <p>
+                  To find tournaments, go to the "Events" tab in the app and
+                  filter by "Tournaments". You can further filter by location,
+                  date, and skill level to find tournaments that match your
+                  preferences.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="faq-item border border-gray-200 rounded-lg overflow-hidden"
+            >
+              <button
+                class="faq-toggle w-full flex justify-between items-center p-4 bg-white hover:bg-gray-50 text-left"
+              >
+                <span class="text-lg font-medium text-gray-900"
+                  >Is there a fee to use the app?</span
+                >
+                <i class="ri-arrow-down-s-line faq-icon text-gray-500"></i>
+              </button>
+              <div class="faq-answer px-4 bg-gray-50 text-gray-600">
+                <p>
+                  The basic version of InstaSportsInfo is completely free to
+                  use. We also offer a Premium subscription with additional
+                  features like advanced stats, priority court bookings, and
+                  exclusive event access. You can view pricing details in the
+                  "Subscription" section of the app.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 text-center">
+            <a
+              href="#"
+              class="inline-flex items-center text-primary hover:text-primary-dark font-medium"
+            >
+              <span>View all FAQs</span>
+              <i class="ri-arrow-right-line ml-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section class="py-16 bg-primary bg-opacity-5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            We Value Your Feedback
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Your suggestions help us improve our app and services. Let us know
+            what you think!
+          </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-sm">
+          <div class="mb-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">
+              How satisfied are you with our app?
+            </h3>
+            <div class="flex flex-wrap gap-4">
+              <label class="custom-radio flex items-center gap-2">
+                <input
+                  type="radio"
+                  name="satisfaction"
+                  value="very-satisfied"
+                />
+                <span class="radio-mark"></span>
+                <span>Very satisfied</span>
+              </label>
+              <label class="custom-radio flex items-center gap-2">
+                <input type="radio" name="satisfaction" value="satisfied" />
+                <span class="radio-mark"></span>
+                <span>Satisfied</span>
+              </label>
+              <label class="custom-radio flex items-center gap-2">
+                <input type="radio" name="satisfaction" value="neutral" />
+                <span class="radio-mark"></span>
+                <span>Neutral</span>
+              </label>
+              <label class="custom-radio flex items-center gap-2">
+                <input type="radio" name="satisfaction" value="unsatisfied" />
+                <span class="radio-mark"></span>
+                <span>Unsatisfied</span>
+              </label>
+              <label class="custom-radio flex items-center gap-2">
+                <input
+                  type="radio"
+                  name="satisfaction"
+                  value="very-unsatisfied"
+                />
+                <span class="radio-mark"></span>
+                <span>Very unsatisfied</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">
+              Which features would you like to see improved?
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <label class="custom-checkbox flex items-center gap-2">
+                <input type="checkbox" name="features" value="matchmaking" />
+                <span class="checkmark"></span>
+                <span>Player matchmaking</span>
+              </label>
+              <label class="custom-checkbox flex items-center gap-2">
+                <input type="checkbox" name="features" value="court-booking" />
+                <span class="checkmark"></span>
+                <span>Court booking</span>
+              </label>
+              <label class="custom-checkbox flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  name="features"
+                  value="event-notifications"
+                />
+                <span class="checkmark"></span>
+                <span>Event notifications</span>
+              </label>
+              <label class="custom-checkbox flex items-center gap-2">
+                <input type="checkbox" name="features" value="skill-tracking" />
+                <span class="checkmark"></span>
+                <span>Skill tracking</span>
+              </label>
+              <label class="custom-checkbox flex items-center gap-2">
+                <input type="checkbox" name="features" value="community" />
+                <span class="checkmark"></span>
+                <span>Community features</span>
+              </label>
+              <label class="custom-checkbox flex items-center gap-2">
+                <input type="checkbox" name="features" value="user-interface" />
+                <span class="checkmark"></span>
+                <span>User interface</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <label
+              for="feedback"
+              class="block text-xl font-semibold text-gray-900 mb-4"
+              >Additional feedback or suggestions</label
+            >
+            <textarea
+              id="feedback"
+              name="feedback"
+              rows="4"
+              class="w-full px-4 py-3 bg-white border border-gray-300 rounded text-gray-700 text-sm resize-none"
+              placeholder="Share your thoughts with us..."
+            ></textarea>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <label class="custom-switch flex items-center gap-3">
+              <input type="checkbox" name="contact-permission" />
+              <span class="switch-slider"></span>
+              <span class="text-sm text-gray-600"
+                >Allow us to contact you about your feedback</span
+              >
+            </label>
+            <button
+              type="submit"
+              class="bg-primary hover:bg-opacity-90 text-white font-medium py-2 px-6 !rounded-button whitespace-nowrap transition-all"
+            >
+              Submit Feedback
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div class="text-primary font-['Pacifico'] text-2xl mb-4">
+              InstaSportsInfo
+            </div>
+            <p class="text-gray-400 mb-4">
+              Connect with your local pickleball community and take your game to
+              the next level.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white w-10 h-10 flex items-center justify-center rounded-full bg-gray-800"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white w-10 h-10 flex items-center justify-center rounded-full bg-gray-800"
+              >
+                <i class="ri-twitter-x-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white w-10 h-10 flex items-center justify-center rounded-full bg-gray-800"
+              >
+                <i class="ri-instagram-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white w-10 h-10 flex items-center justify-center rounded-full bg-gray-800"
+              >
+                <i class="ri-youtube-fill"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Company</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">About Us</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Careers</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Press</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Blog</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Support</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Help Center</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://readdy.ai/home/bfd0bed7-a0c9-4b77-8527-a923a1fc171a/4e3c23f1-33b7-4058-bbbc-d68f7c3c56d2"
+                  data-readdy="true"
+                  class="text-gray-400 hover:text-white"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Community Guidelines</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">FAQs</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Legal</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Terms of Service</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Cookie Policy</a
+                >
+              </li>
+              <li>
+                <div class="relative">
+                  <select
+                    class="appearance-none bg-gray-800 text-gray-400 py-2 pl-3 pr-8 rounded w-full border-none"
+                  >
+                    <option>English</option>
+                    <option>Spanish</option>
+                    <option>French</option>
+                  </select>
+                  <div
+                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400"
+                  >
+                    <i class="ri-arrow-down-s-line"></i>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-400 text-sm">
+            © 2025 InstaSportsInfo, Inc. All rights reserved.
+          </p>
+          <div class="flex items-center space-x-4 mt-4 md:mt-0">
+            <i class="ri-visa-fill ri-lg text-gray-400"></i>
+            <i class="ri-mastercard-fill ri-lg text-gray-400"></i>
+            <i class="ri-paypal-fill ri-lg text-gray-400"></i>
+            <i class="ri-apple-fill ri-lg text-gray-400"></i>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script id="form-validation">
+      document.addEventListener("DOMContentLoaded", function () {
+        const contactForm = document.getElementById("contact-form");
+        if (!contactForm) return;
+
+        contactForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Simple validation
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const subject = document.getElementById("subject").value;
+          const message = document.getElementById("message").value;
+
+          let isValid = true;
+
+          if (!name) {
+            highlightError("name");
+            isValid = false;
+          } else {
+            removeError("name");
+          }
+
+          if (!email || !email.includes("@")) {
+            highlightError("email");
+            isValid = false;
+          } else {
+            removeError("email");
+          }
+
+          if (!subject) {
+            highlightError("subject");
+            isValid = false;
+          } else {
+            removeError("subject");
+          }
+
+          if (!message) {
+            highlightError("message");
+            isValid = false;
+          } else {
+            removeError("message");
+          }
+
+          if (isValid) {
+            // Show success message
+            const successMessage = document.createElement("div");
+            successMessage.className =
+              "mt-4 p-4 bg-green-100 text-green-800 rounded-lg";
+            successMessage.innerHTML =
+              '<div class="flex items-center"><i class="ri-check-line mr-2"></i> Your message has been sent successfully! We\'ll get back to you soon.</div>';
+
+            contactForm.appendChild(successMessage);
+
+            // Reset form
+            contactForm.reset();
+
+            // Remove success message after 5 seconds
+            setTimeout(() => {
+              successMessage.remove();
+            }, 5000);
+          }
+        });
+
+        function highlightError(id) {
+          const element = document.getElementById(id);
+          element.classList.add("border-red-500");
+
+          // Add error message if it doesn't exist
+          if (!document.getElementById(`${id}-error`)) {
+            const errorMessage = document.createElement("p");
+            errorMessage.id = `${id}-error`;
+            errorMessage.className = "text-red-500 text-xs mt-1";
+            errorMessage.textContent = "This field is required";
+            element.parentNode.appendChild(errorMessage);
+          }
+        }
+
+        function removeError(id) {
+          const element = document.getElementById(id);
+          element.classList.remove("border-red-500");
+
+          const errorMessage = document.getElementById(`${id}-error`);
+          if (errorMessage) {
+            errorMessage.remove();
+          }
+        }
+      });
+    </script>
+
+    <script id="faq-accordion">
+      document.addEventListener("DOMContentLoaded", function () {
+        const faqToggles = document.querySelectorAll(".faq-toggle");
+        if (faqToggles.length === 0) return;
+
+        faqToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function () {
+            const faqItem = this.parentNode;
+
+            // Close all other FAQs
+            document.querySelectorAll(".faq-item").forEach((item) => {
+              if (item !== faqItem) {
+                item.classList.remove("active");
+              }
+            });
+
+            // Toggle current FAQ
+            faqItem.classList.toggle("active");
+          });
+        });
+
+        // FAQ Search functionality
+        const searchInput = document.getElementById("faq-search");
+        if (searchInput) {
+          searchInput.addEventListener("input", function () {
+            const searchTerm = this.value.toLowerCase();
+
+            document.querySelectorAll(".faq-item").forEach((item) => {
+              const questionText = item
+                .querySelector(".faq-toggle span")
+                .textContent.toLowerCase();
+              const answerText = item
+                .querySelector(".faq-answer")
+                .textContent.toLowerCase();
+
+              if (
+                questionText.includes(searchTerm) ||
+                answerText.includes(searchTerm)
+              ) {
+                item.style.display = "block";
+              } else {
+                item.style.display = "none";
+              }
+            });
+          });
+        }
+      });
+    </script>
+
+    <script id="mobile-menu">
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuButton = document.querySelector(".md\\:hidden button");
+        if (!menuButton) return;
+
+        let mobileMenu = document.createElement("div");
+        mobileMenu.className = "fixed inset-0 bg-black bg-opacity-50 z-50 hidden";
+        mobileMenu.innerHTML = `
+              <div class="bg-white h-full w-64 p-6 transform transition-transform -translate-x-full">
+                  <div class="flex justify-between items-center mb-8">
+                      <div class="text-primary font-['Pacifico'] text-2xl">InstaSportsInfo</div>
+                      <button class="close-menu w-10 h-10 flex items-center justify-center">
+                          <i class="ri-close-line ri-lg"></i>
+                      </button>
+                  </div>
+                  <nav class="flex flex-col space-y-4">
+                      <a href="https://readdy.ai/home/bfd0bed7-a0c9-4b77-8527-a923a1fc171a/4e3c23f1-33b7-4058-bbbc-d68f7c3c56d2" data-readdy="true" class="text-gray-700 hover:text-primary py-2">Home</a>
+                      <a href="#" class="text-gray-700 hover:text-primary py-2">Features</a>
+                      <a href="#" class="text-gray-700 hover:text-primary py-2">Community</a>
+                      <a href="#" class="text-gray-700 hover:text-primary py-2">About Us</a>
+                      <a href="#" class="text-primary py-2">Contact Us</a>
+                  </nav>
+              </div>
+          `;
+
+        document.body.appendChild(mobileMenu);
+
+        const menuContent = mobileMenu.querySelector("div");
+        const closeButton = mobileMenu.querySelector(".close-menu");
+        const menuLinks = mobileMenu.querySelectorAll("a");
+
+        menuButton.addEventListener("click", function () {
+          mobileMenu.classList.remove("hidden");
+          setTimeout(() => {
+            menuContent.classList.remove("-translate-x-full");
+          }, 10);
+        });
+
+        function closeMenu() {
+          menuContent.classList.add("-translate-x-full");
+          setTimeout(() => {
+            mobileMenu.classList.add("hidden");
+          }, 300);
+        }
+
+        closeButton.addEventListener("click", closeMenu);
+
+        menuLinks.forEach((link) => {
+          link.addEventListener("click", closeMenu);
+        });
+
+        mobileMenu.addEventListener("click", function (e) {
+          if (e.target === mobileMenu) {
+            closeMenu();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
