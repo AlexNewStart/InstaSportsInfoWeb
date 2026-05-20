@@ -1,0 +1,7 @@
+# Files that are part of the repo but must NOT be deployed/served publicly.
+# The legal/ pages, *.html and assets ARE deployed; everything below is not.
+scripts/
+CLAUDE.md
+README.md
+.gitignore
+.vercelignore
