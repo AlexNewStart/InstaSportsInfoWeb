@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Join InstaPickleball</title>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#4CAF50", secondary: "#FF9800" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .invite-shell {
+        background:
+          linear-gradient(120deg, rgba(9, 64, 31, 0.92), rgba(38, 139, 76, 0.82)),
+          url("https://static.readdy.ai/image/4b4e1968528fbee9910210d857eb996d/712dcea162579448d491e166025db616.png");
+        background-position: center;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900">
+    <main class="invite-shell min-h-screen">
+      <div class="min-h-screen flex flex-col">
+        <nav class="px-5 sm:px-8 py-5">
+          <a href="/" class="inline-flex items-center gap-3 text-white">
+            <img src="/favicon.png" alt="" class="h-9 w-9 rounded-lg" />
+            <span class="font-['Pacifico'] text-2xl">InstaPickleball</span>
+          </a>
+        </nav>
+
+        <section class="flex-1 flex items-center">
+          <div class="max-w-5xl mx-auto px-5 sm:px-8 py-12 grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <div class="text-white">
+              <p class="text-sm font-semibold uppercase tracking-[0.22em] text-green-100">
+                Friend invite
+              </p>
+              <h1 class="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                Join your local pickleball community.
+              </h1>
+              <p class="mt-5 max-w-2xl text-lg sm:text-xl text-green-50">
+                Your friend invited you to InstaPickleball. Use the referral code below when
+                creating your profile.
+              </p>
+            </div>
+
+            <div class="bg-white/95 backdrop-blur rounded-lg shadow-2xl p-6 sm:p-8">
+              <div class="flex items-start gap-4">
+                <div class="h-12 w-12 shrink-0 rounded-full bg-primary/10 flex items-center justify-center">
+                  <i class="ri-user-add-line ri-xl text-primary"></i>
+                </div>
+                <div>
+                  <h2 class="text-2xl font-bold text-gray-950">Opening InstaPickleball</h2>
+                  <p id="statusText" class="mt-2 text-gray-600">
+                    Copy the code first, then open the app when you are ready.
+                  </p>
+                </div>
+              </div>
+
+              <div class="mt-8">
+                <p class="text-sm font-medium text-gray-600">Referral code</p>
+                <div class="mt-2 flex flex-col sm:flex-row gap-3">
+                  <div
+                    id="inviteCode"
+                    class="min-h-14 flex-1 rounded-lg border border-gray-200 bg-gray-50 px-4 py-3 font-mono text-2xl font-semibold tracking-[0.18em] text-gray-950"
+                  >
+                    --
+                  </div>
+                  <button
+                    id="copyButton"
+                    type="button"
+                    class="h-14 rounded-button bg-gray-950 px-5 font-semibold text-white transition hover:bg-gray-800 disabled:cursor-not-allowed disabled:bg-gray-400"
+                  >
+                    Copy Code
+                  </button>
+                </div>
+              </div>
+
+              <div class="mt-8 grid gap-3 sm:grid-cols-2">
+                <button
+                  id="openAppButton"
+                  type="button"
+                  class="min-h-12 rounded-button bg-primary px-5 py-3 font-semibold text-white transition hover:bg-opacity-90"
+                >
+                  Open App
+                </button>
+                <a
+                  id="websiteButton"
+                  href="/#download"
+                  class="min-h-12 rounded-button border border-gray-300 px-5 py-3 text-center font-semibold text-gray-800 transition hover:border-primary hover:text-primary"
+                >
+                  Continue to Website
+                </a>
+              </div>
+
+              <p class="mt-5 text-sm text-gray-500">
+                Some in-app browsers block opening third-party apps automatically, so this
+                page keeps you in control.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      (function () {
+        var HOME_DOWNLOAD_URL = "https://www.instapickleball.info/#download";
+        var appUrl = "instapickleball://";
+
+        function normalizeInviteCode(value) {
+          return (value || "").trim().toUpperCase();
+        }
+
+        function getInviteCode() {
+          var params = new URLSearchParams(window.location.search);
+          var codeFromQuery = params.get("code") || params.get("invite");
+          if (codeFromQuery) return normalizeInviteCode(codeFromQuery);
+
+          var match = window.location.pathname.match(/\/invite\/([^/?#]+)/);
+          if (!match) return "";
+
+          try {
+            return normalizeInviteCode(decodeURIComponent(match[1]));
+          } catch (_error) {
+            return normalizeInviteCode(match[1]);
+          }
+        }
+
+        function isMobileDevice() {
+          return /Android|iPhone|iPad|iPod/i.test(window.navigator.userAgent);
+        }
+
+        var inviteCode = getInviteCode();
+        var encodedCode = encodeURIComponent(inviteCode);
+        var fallbackUrl = inviteCode
+          ? "https://www.instapickleball.info/?invite=" + encodedCode + "#download"
+          : HOME_DOWNLOAD_URL;
+
+        var inviteCodeEl = document.getElementById("inviteCode");
+        var statusTextEl = document.getElementById("statusText");
+        var copyButtonEl = document.getElementById("copyButton");
+        var openAppButtonEl = document.getElementById("openAppButton");
+        var websiteButtonEl = document.getElementById("websiteButton");
+
+        inviteCodeEl.textContent = inviteCode || "N/A";
+        copyButtonEl.disabled = !inviteCode;
+        openAppButtonEl.dataset.deepLink = appUrl;
+        websiteButtonEl.href = fallbackUrl;
+
+        function openApp() {
+          statusTextEl.textContent = "Trying to open the app. If nothing happens, use Continue to Website.";
+          window.location.href = appUrl;
+        }
+
+        openAppButtonEl.addEventListener("click", openApp);
+
+        copyButtonEl.addEventListener("click", function () {
+          if (!inviteCode || !navigator.clipboard) return;
+
+          navigator.clipboard.writeText(inviteCode).then(function () {
+            copyButtonEl.textContent = "Copied";
+            window.setTimeout(function () {
+              copyButtonEl.textContent = "Copy Code";
+            }, 1500);
+          });
+        });
+
+        if (!isMobileDevice()) {
+          statusTextEl.textContent = "Open this link on your phone, or continue to the website.";
+        }
+      })();
+    </script>
+  </body>
+</html>

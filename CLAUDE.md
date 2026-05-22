@@ -5,7 +5,7 @@ Guidance for Claude Code when working in the **InstaSportsInfoWeb** repository.
 ## What this repo is
 
 The marketing website for **InstaPickleball**, deployed on Vercel at
-`instapickleball.info`. Pure static HTML — Tailwind via CDN, no build step, no
+`www.instapickleball.info`. Pure static HTML — Tailwind via CDN, no build step, no
 npm dependencies. What is committed is exactly what Vercel serves.
 
 ## Pages
@@ -14,6 +14,7 @@ npm dependencies. What is committed is exactly what Vercel serves.
 | -------------------- | ---------------------------- |
 | `index.html`         | `/`                          |
 | `contact_us.html`    | `/contact_us`                |
+| `invite.html`        | `/invite/:code` via rewrite  |
 | `legal/privacy.html` | `/legal/privacy`             |
 | `legal/terms.html`   | `/legal/terms`               |
 
@@ -60,3 +61,11 @@ site stays zero-build. `scripts/` is kept out of deployment via `.vercelignore`.
 Use `npx serve` — it honors `cleanUrls` and matches Vercel's behavior. Plain
 `python3 -m http.server` does NOT: clean URLs like `/legal/terms` return 404
 there because the file on disk is `legal/terms.html`. See `README.md`.
+
+For referral invite pages, `npx serve` can preview the static page at
+`/invite?code=1A`. The exact shared URL shape `/invite/1A` is handled by
+Vercel's rewrite rules.
+
+The invite page intentionally does not auto-open the app. Users copy the code
+and manually tap **Open App**, which currently launches the app root
+`instapickleball://` until the app has a real invite-code route.
