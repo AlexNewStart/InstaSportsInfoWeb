@@ -19,6 +19,7 @@ above. See CLAUDE.md for the full regeneration checklist.
 """
 import argparse
 import os
+import re
 import subprocess
 import sys
 
@@ -57,6 +58,7 @@ def _ensure_markdown():
 
 _ensure_markdown()
 import markdown  # noqa: E402  (only importable after _ensure_markdown)
+from markdown.extensions.toc import slugify  # noqa: E402
 
 HEAD = """<!DOCTYPE html>
 <html lang="en">
@@ -95,6 +97,7 @@ HEAD = """<!DOCTYPE html>
         margin-top: 2.5rem; margin-bottom: 1rem; padding-top: 1.75rem; border-top: 1px solid #e5e7eb; }
       .legal-content h3 { font-size: 1.15rem; font-weight: 600; color: #1f2937;
         margin-top: 1.75rem; margin-bottom: 0.6rem; }
+      .legal-content h1, .legal-content h2, .legal-content h3 { scroll-margin-top: 5rem; }
       .legal-content p { margin: 0.9rem 0; }
       .legal-content ul, .legal-content ol { margin: 0.9rem 0; padding-left: 1.6rem; }
       .legal-content ul { list-style: disc; }
@@ -245,10 +248,49 @@ def strip_frontmatter(text):
     return text
 
 
+def strip_inline_markdown(text):
+    """Strip the small inline Markdown subset used in legal TOC entries."""
+    text = re.sub(r"!\[([^\]]*)\]\([^)]+\)", r"\1", text)
+    text = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", text)
+    text = re.sub(r"[*_`~]", "", text)
+    return text.replace("\\", "").strip()
+
+
+def link_table_of_contents(text):
+    """Turn the legal docs' manual Table of Contents lists into anchor links."""
+    lines = text.splitlines()
+    linked_lines = []
+    in_toc = False
+
+    for line in lines:
+        stripped = line.strip()
+        if stripped == "## Table of Contents":
+            in_toc = True
+            linked_lines.append(line)
+            continue
+
+        if in_toc and stripped == "---":
+            in_toc = False
+
+        if in_toc:
+            match = re.match(r"^(\s*)(\d+)\.\s+(.+?)\s*$", line)
+            if match:
+                indent, section_number, section_title = match.groups()
+                heading_text = strip_inline_markdown(f"{section_number}. {section_title}")
+                linked_lines.append(
+                    f"{indent}{section_number}. [{section_title}](#{slugify(heading_text, '-')})"
+                )
+                continue
+
+        linked_lines.append(line)
+
+    return "\n".join(linked_lines)
+
+
 def render(src_dir, md_name, out_name, title, crosslink):
     src_path = os.path.join(src_dir, md_name)
     with open(src_path, encoding="utf-8") as f:
-        body_md = strip_frontmatter(f.read())
+        body_md = link_table_of_contents(strip_frontmatter(f.read()))
     # extra -> tables/abbr/etc; toc -> heading ids for deep links;
     # nl2br -> single newlines become <br> (address blocks, lettered lists).
     body_html = markdown.markdown(
