@@ -32,10 +32,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
-      rel="stylesheet"
-    />
-    <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
@@ -101,9 +97,12 @@
             <a
               href="index.html"
               data-readdy="true"
-              class="text-primary font-['Pacifico'] text-2xl"
-              >InstaPickleball</a
+              aria-label="InstaPickleball home"
+              class="inline-flex items-center gap-2 text-primary text-2xl font-bold italic leading-none"
             >
+              <img src="/logo3x.png" alt="" class="h-8 w-8 shrink-0" />
+              <span>InstaPickleball</span>
+            </a>
           </div>
           <div class="hidden md:flex items-center space-x-8">
             <a
@@ -246,8 +245,11 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <div class="text-primary font-['Pacifico'] text-2xl mb-4">
-              InstaPickleball
+            <div
+              class="mb-4 inline-flex items-center gap-2 text-primary text-2xl font-bold italic leading-none"
+            >
+              <img src="/logo3x.png" alt="" class="h-8 w-8 shrink-0" />
+              <span>InstaPickleball</span>
             </div>
             <p class="text-gray-400 mb-4">
               Connect with your local pickleball community and take your game to
@@ -384,9 +386,12 @@
         let mobileMenu = document.createElement("div");
         mobileMenu.className = "fixed inset-0 bg-black bg-opacity-50 z-50 hidden";
         mobileMenu.innerHTML = `
-              <div class="bg-white h-full w-64 p-6 transform transition-transform -translate-x-full">
+              <div class="bg-white h-full w-72 p-6 transform transition-transform -translate-x-full">
                   <div class="flex justify-between items-center mb-8">
-                      <div class="text-primary font-['Pacifico'] text-2xl">InstaPickleball</div>
+                      <a href="index.html" data-readdy="true" class="inline-flex items-center gap-1.5 text-primary text-xl font-bold italic leading-none" aria-label="InstaPickleball home">
+                          <img src="/logo3x.png" alt="" class="h-7 w-7 shrink-0" />
+                          <span>InstaPickleball</span>
+                      </a>
                       <button class="close-menu w-10 h-10 flex items-center justify-center">
                           <i class="ri-close-line ri-lg"></i>
                       </button>

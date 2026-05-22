@@ -64,6 +64,9 @@ HEAD = """<!DOCTYPE html>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>__TITLE__</title>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>
       tailwind.config = {
@@ -72,10 +75,6 @@ HEAD = """<!DOCTYPE html>
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
-      rel="stylesheet"
-    />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -120,8 +119,11 @@ HEAD = """<!DOCTYPE html>
     <nav class="bg-white shadow-sm sticky top-0 z-40">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
-          <a href="/" class="text-primary font-['Pacifico'] text-2xl">InstaPickleball</a>
-          <div class="flex items-center space-x-6">
+          <a href="/" aria-label="InstaPickleball home" class="inline-flex items-center gap-1.5 text-primary text-xl font-bold italic leading-none sm:gap-2 sm:text-2xl">
+            <img src="/logo3x.png" alt="" class="h-7 w-7 shrink-0 sm:h-8 sm:w-8" />
+            <span>InstaPickleball</span>
+          </a>
+          <div class="flex items-center space-x-3 text-sm sm:space-x-6 sm:text-base">
             <a href="/" class="text-gray-700 hover:text-primary font-medium">Home</a>
             <a href="/contact_us" class="text-gray-700 hover:text-primary font-medium">Contact Us</a>
           </div>
@@ -154,8 +156,9 @@ FOOTER = """    <footer class="bg-gray-900 text-white py-12">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <div class="text-primary font-['Pacifico'] text-2xl mb-4">
-              InstaPickleball
+            <div class="mb-4 inline-flex items-center gap-2 text-primary text-2xl font-bold italic leading-none">
+              <img src="/logo3x.png" alt="" class="h-8 w-8 shrink-0" />
+              <span>InstaPickleball</span>
             </div>
             <p class="text-gray-400 mb-4">
               Connect with your local pickleball community and take your game to
