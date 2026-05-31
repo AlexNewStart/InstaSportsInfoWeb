@@ -84,9 +84,9 @@
                   <i class="ri-user-add-line ri-xl text-primary"></i>
                 </div>
                 <div>
-                  <h2 class="text-2xl font-bold text-gray-950">Opening InstaPickleball</h2>
+                  <h2 class="text-2xl font-bold text-gray-950">Join InstaPickleball</h2>
                   <p id="statusText" class="mt-2 text-gray-600">
-                    Copy the code first, then open the app when you are ready.
+                    Copy your referral code, then download the app and enter it when you sign up.
                   </p>
                 </div>
               </div>
@@ -110,26 +110,30 @@
                 </div>
               </div>
 
-              <div class="mt-8 grid gap-3 sm:grid-cols-2">
-                <button
-                  id="openAppButton"
-                  type="button"
-                  class="min-h-12 rounded-button bg-primary px-5 py-3 font-semibold text-white transition hover:bg-opacity-90"
+              <div class="mt-8">
+                <!-- TestFlight public beta — replace with App Store URL at launch -->
+                <a
+                  id="downloadButton"
+                  href="https://testflight.apple.com/join/T1Et8NSc"
+                  target="_blank"
+                  rel="noopener"
+                  class="flex min-h-12 items-center justify-center gap-2 rounded-button bg-primary px-5 py-3 font-semibold text-white transition hover:bg-opacity-90"
                 >
-                  Open App
-                </button>
+                  <i class="ri-apple-fill"></i>
+                  Download on TestFlight
+                </a>
                 <a
                   id="websiteButton"
                   href="/#download"
-                  class="min-h-12 rounded-button border border-gray-300 px-5 py-3 text-center font-semibold text-gray-800 transition hover:border-primary hover:text-primary"
+                  class="mt-3 block text-center text-sm font-medium text-gray-500 underline-offset-2 transition hover:text-primary hover:underline"
                 >
-                  Continue to Website
+                  Continue to website
                 </a>
               </div>
 
               <p class="mt-5 text-sm text-gray-500">
-                Some in-app browsers block opening third-party apps automatically, so this
-                page keeps you in control.
+                iOS via TestFlight · Android coming soon. Don't forget to enter your referral
+                code when you create your profile.
               </p>
             </div>
           </div>
@@ -140,7 +144,6 @@
     <script>
       (function () {
         var HOME_DOWNLOAD_URL = "https://www.instapickleball.info/#download";
-        var appUrl = "instapickleball://";
 
         function normalizeInviteCode(value) {
           return (value || "").trim().toUpperCase();
@@ -174,20 +177,11 @@
         var inviteCodeEl = document.getElementById("inviteCode");
         var statusTextEl = document.getElementById("statusText");
         var copyButtonEl = document.getElementById("copyButton");
-        var openAppButtonEl = document.getElementById("openAppButton");
         var websiteButtonEl = document.getElementById("websiteButton");
 
         inviteCodeEl.textContent = inviteCode || "N/A";
         copyButtonEl.disabled = !inviteCode;
-        openAppButtonEl.dataset.deepLink = appUrl;
         websiteButtonEl.href = fallbackUrl;
-
-        function openApp() {
-          statusTextEl.textContent = "Trying to open the app. If nothing happens, use Continue to Website.";
-          window.location.href = appUrl;
-        }
-
-        openAppButtonEl.addEventListener("click", openApp);
 
         copyButtonEl.addEventListener("click", function () {
           if (!inviteCode || !navigator.clipboard) return;
@@ -201,7 +195,8 @@
         });
 
         if (!isMobileDevice()) {
-          statusTextEl.textContent = "Open this link on your phone, or continue to the website.";
+          statusTextEl.textContent =
+            "Open this link on your iPhone to install via TestFlight, or continue to the website.";
         }
       })();
     </script>

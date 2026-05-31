@@ -155,8 +155,11 @@
             Connect, Play, Grow - All in One App
           </p>
           <div class="flex flex-col sm:flex-row gap-4 mb-8">
+            <!-- TestFlight public beta — replace with App Store URL at launch -->
             <a
-              href="#"
+              href="https://testflight.apple.com/join/T1Et8NSc"
+              target="_blank"
+              rel="noopener"
               class="store-button bg-black text-white px-6 py-3 !rounded-button whitespace-nowrap flex items-center justify-center gap-2"
             >
               <div class="w-6 h-6 flex items-center justify-center">
@@ -164,21 +167,24 @@
               </div>
               <div>
                 <div class="text-xs">Download on the</div>
-                <div class="text-sm font-semibold">App Store</div>
+                <div class="text-sm font-semibold flex items-center gap-1.5">
+                  App Store
+                  <span class="rounded-full bg-primary px-1.5 py-px text-[10px] font-bold leading-none">BETA</span>
+                </div>
               </div>
             </a>
-            <a
-              href="#"
-              class="store-button bg-black text-white px-6 py-3 !rounded-button whitespace-nowrap flex items-center justify-center gap-2"
+            <span
+              aria-disabled="true"
+              class="bg-black text-white px-6 py-3 !rounded-button whitespace-nowrap flex items-center justify-center gap-2 opacity-60 cursor-not-allowed"
             >
               <div class="w-6 h-6 flex items-center justify-center">
                 <i class="ri-google-play-fill ri-lg"></i>
               </div>
               <div>
-                <div class="text-xs">Get it on</div>
+                <div class="text-xs">Coming soon to</div>
                 <div class="text-sm font-semibold">Google Play</div>
               </div>
-            </a>
+            </span>
           </div>
           <div class="flex items-center gap-2">
             <div class="flex -space-x-2">
@@ -618,8 +624,11 @@
           class="flex flex-col md:flex-row items-center justify-center gap-8"
         >
           <div class="flex flex-col items-center">
+            <!-- TestFlight public beta — replace with App Store URL at launch -->
             <a
-              href="#"
+              href="https://testflight.apple.com/join/T1Et8NSc"
+              target="_blank"
+              rel="noopener"
               class="store-button bg-black text-white px-8 py-4 !rounded-button whitespace-nowrap flex items-center justify-center gap-3 mb-4"
             >
               <div class="w-8 h-8 flex items-center justify-center">
@@ -627,37 +636,38 @@
               </div>
               <div>
                 <div class="text-xs">Download on the</div>
-                <div class="text-base font-semibold">App Store</div>
+                <div class="text-base font-semibold flex items-center gap-1.5">
+                  App Store
+                  <span class="rounded-full bg-primary px-1.5 py-px text-[10px] font-bold leading-none">BETA</span>
+                </div>
               </div>
             </a>
+            <!-- QR encodes the TestFlight URL above; regenerate via scripts/gen-qr.py -->
             <img
-              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGQ9Ik0zIDNoMTh2MThoLTE4eiIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik0xMiAyYy01LjUyIDAtMTAgNC40OC0xMCAxMHM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTAtNC40OC0xMC0xMC0xMHptLTEgMTVsLTUtNSAxLjQxLTEuNDEgMy41OSAzLjU4IDcuNTktNy41OSAxLjQxIDEuNDItOSA5eiIgZmlsbD0iIzRjYWY1MCIvPjwvc3ZnPg=="
-              alt="QR Code"
-              class="w-24 h-24"
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNjQiIGhlaWdodD0iMjY0IiBjbGFzcz0ic2Vnbm8iPjxnIHRyYW5zZm9ybT0ic2NhbGUoOCkiPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0wIDBoMzN2MzNoLTMzeiIvPjxwYXRoIGNsYXNzPSJxcmxpbmUiIHN0cm9rZT0iIzExMTgyNyIgZD0iTTIgMi41aDdtMiAwaDRtMSAwaDFtMiAwaDNtMiAwaDdtLTI5IDFoMW01IDBoMW00IDBoMm0xIDBoMm0xIDBoMm0zIDBoMW01IDBoMW0tMjkgMWgxbTEgMGgzbTEgMGgxbTIgMGgxbTEgMGgybTEgMGgxbTEgMGgzbTMgMGgxbTEgMGgzbTEgMGgxbS0yOSAxaDFtMSAwaDNtMSAwaDFtMiAwaDFtNCAwaDNtMSAwaDNtMSAwaDFtMSAwaDNtMSAwaDFtLTI5IDFoMW0xIDBoM20xIDBoMW00IDBoMW0xIDBoMW0xIDBoMW0yIDBoMW0zIDBoMW0xIDBoM20xIDBoMW0tMjkgMWgxbTUgMGgxbTEgMGgxbTEgMGg0bTEgMGgxbTIgMGgzbTEgMGgxbTUgMGgxbS0yOSAxaDdtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDFtMSAwaDdtLTE4IDFoMm0yIDBoMW0xIDBoMm0tMTkgMWgxbTIgMGgxbTEgMGgybTEgMGgxbTMgMGgybTQgMGgxbTEgMGgybTEgMGgxbS0yNCAxaDZtMSAwaDFtMSAwaDJtMyAwaDNtMyAwaDNtMiAwaDFtMiAwaDFtLTI5IDFoMm00IDBoMW0xIDBoMW0xIDBoMW0xIDBoM20xIDBoMm0xIDBoMW0xIDBoMW0yIDBoNG0tMjggMWgxbTEgMGgzbTMgMGgybTIgMGgzbTEgMGgxbTIgMGg1bTIgMGgybS0yOCAxaDFtMyAwaDFtMSAwaDJtMiAwaDNtMiAwaDNtMiAwaDRtMSAwaDFtMSAwaDJtLTI4IDFoNW00IDBoNG0yIDBoMm0xIDBoM20tMjIgMWgxbTEgMGgxbTEgMGgzbTEgMGgxbTEgMGg1bTEgMGgxbTEgMGgxbTIgMGgxbTMgMGg0bS0yNSAxaDFtMiAwaDJtMiAwaDNtMiAwaDNtMSAwaDJtMSAwaDFtMSAwaDFtMSAwaDFtLTI4IDFoMW0xIDBoMm0yIDBoNm0xIDBoMW0xIDBoMW0xIDBoMW0yIDBoMm0xIDBoMW0zIDBoMW0tMjcgMWgxbTEgMGgybTIgMGg1bTEgMGgxbTIgMGgybTIgMGg0bTEgMGgxbTIgMGgxbS0yOSAxaDFtMSAwaDVtMiAwaDFtMSAwaDRtMiAwaDFtMiAwaDFtMiAwaDJtMiAwaDJtLTI1IDFoMm0xIDBoMW0yIDBoMm0yIDBoNW0xIDBoMW0xIDBoMW00IDBoMm0tMjkgMWgxbTIgMGgybTEgMGgybTIgMGgxbTIgMGg0bTMgMGg1bTEgMGgxbS0xOSAxaDFtMSAwaDJtMSAwaDFtMiAwaDFtMyAwaDFtMyAwaDFtMSAwaDNtLTI5IDFoN20yIDBoMW0xIDBoMm0xIDBoMW0xIDBoMW0zIDBoMW0xIDBoMW0xIDBoMW0yIDBoMW0tMjggMWgxbTUgMGgxbTEgMGg0bTEgMGgxbTIgMGgxbTEgMGgxbTEgMGgxbTMgMGg1bS0yOSAxaDFtMSAwaDNtMSAwaDFtMiAwaDFtMSAwaDJtMSAwaDVtMSAwaDVtLTI1IDFoMW0xIDBoM20xIDBoMW0xIDBoMW0xIDBoMW0xIDBoMW05IDBoNm0tMjggMWgxbTEgMGgzbTEgMGgxbTIgMGgxbTEgMGgybTEgMGgxbTEgMGgxbTMgMGgxbTMgMGgzbTEgMGgxbS0yOSAxaDFtNSAwaDFtMyAwaDRtMyAwaDRtMiAwaDFtMyAwaDFtLTI4IDFoN20xIDBoNG0xIDBoM20xIDBoMW0yIDBoNW0yIDBoMSIvPjwvZz48L3N2Zz4K"
+              alt="Scan to install the InstaPickleball TestFlight beta"
+              class="w-24 h-24 rounded"
             />
+            <p class="mt-2 text-xs text-gray-500">Scan to install (iOS)</p>
           </div>
           <div class="flex flex-col items-center">
-            <a
-              href="#"
-              class="store-button bg-black text-white px-8 py-4 !rounded-button whitespace-nowrap flex items-center justify-center gap-3 mb-4"
+            <span
+              aria-disabled="true"
+              class="bg-black text-white px-8 py-4 !rounded-button whitespace-nowrap flex items-center justify-center gap-3 mb-4 opacity-60 cursor-not-allowed"
             >
               <div class="w-8 h-8 flex items-center justify-center">
                 <i class="ri-google-play-fill ri-xl"></i>
               </div>
               <div>
-                <div class="text-xs">Get it on</div>
+                <div class="text-xs">Coming soon to</div>
                 <div class="text-base font-semibold">Google Play</div>
               </div>
-            </a>
-            <img
-              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGQ9Ik0zIDNoMTh2MThoLTE4eiIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik0xMiAyYy01LjUyIDAtMTAgNC40OC0xMCAxMHM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTAtNC40OC0xMC0xMC0xMHptLTEgMTVsLTUtNSAxLjQxLTEuNDEgMy41OSAzLjU4IDcuNTktNy41OSAxLjQxIDEuNDItOSA5eiIgZmlsbD0iIzRjYWY1MCIvPjwvc3ZnPg=="
-              alt="QR Code"
-              class="w-24 h-24"
-            />
+            </span>
+            <p class="mt-2 text-sm text-gray-500">Android version in the works</p>
           </div>
         </div>
         <div class="text-center mt-8">
-          <p class="text-gray-600">Available for iOS and Android devices</p>
+          <p class="text-gray-600">iOS beta available now via TestFlight · Android coming soon</p>
         </div>
       </div>
     </section>
